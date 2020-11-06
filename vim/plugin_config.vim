@@ -27,23 +27,33 @@ let g:lightline = {
       \              [ 'percent' ],
       \              [ 'filetype' ] ]
       \ },
+      \ 'tabline': {
+      \   'left': [ ['buffers'] ],
+      \   'right': [ ['close'] ]
+      \ },
       \ 'component_function': {
       \   'gitbranch': 'fugitive#head',
       \   'filename': 'LightlineFilename',
       \   'cocstatus': 'coc#status'
       \ },
+      \ 'component_expand': {
+      \   'buffers': 'lightline#bufferline#buffers'
+      \ },
+      \ 'component_type': {
+      \   'buffers': 'tabsel'
       \ }
-
+      \ }
 
 set laststatus=2
 
-let g:ale_fixers = { 'javascript': ['eslint'], 'ruby': ['rubocop']  }
+let g:ale_fixers = { 'javascript': ['prettier'], 'ruby': ['rubocop'], 'typescript': ['prettier'], 'typescriptreact': ['prettier']  }
 let g:ale_fix_on_save = 1
 let g:ale_linters = {
-\   'javascript': ['eslint']
+\   'javascript': ['eslint'],
 \}
+let g:ale_linters.typescript = ['eslint']
 
-let g:rspec_command = "Dispatch rspec {spec}"
+let g:rspec_command = "Dispatch bin/spring rspec {spec}"
 
 " NERDTrees File highlighting
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
@@ -99,3 +109,14 @@ command! -bang -nargs=* Rg
 "   \   <bang>0 ? fzf#vim#with_preview('up:60%')
 "   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
 "   \   <bang>0)
+
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()

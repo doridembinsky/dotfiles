@@ -17,6 +17,9 @@ set relativenumber
 filetype plugin indent on    " required
 set autoindent
 
+set cindent
+set smartindent
+
 set t_8b=^[[48;2;%lu;%lu;%lum
 set t_8f=^[[38;2;%lu;%lu;%lum
 
@@ -41,6 +44,8 @@ set clipboard=unnamed
 autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
 autocmd Filetype terraform setlocal ts=2 sw=2 expandtab
 autocmd Filetype javascript setlocal ts=4 sw=4 sts=0 expandtab
+autocmd Filetype typescript setlocal ts=4 sw=4 sts=0 expandtab
+autocmd Filetype typescriptreact setlocal ts=4 sw=4 sts=0 expandtab
 autocmd Filetype json setlocal ts=4 sw=4 sts=0 expandtab
 " autocmd FileType javascript set formatprg=prettier\ --stdin
 
@@ -58,3 +63,8 @@ autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\\t/
 
 " Tab completion
 set wildmode=list:longest,list:full
+
+" New stuff
+set ttyfast
+set lazyredraw
+set updatetime=300
