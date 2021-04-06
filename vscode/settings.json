@@ -1,0 +1,75 @@
+{
+    "editor.formatOnSave": true,
+    "editor.lineNumbers": "relative",
+    "vim.leader": " ",
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["<C-l>"],
+            "after": ["$"]
+        }, {
+            "before": ["<C-h>"],
+            "after": ["0", "w"]
+        },{
+            "before": ["<Leader>", "o"],
+            "after": ["o", "<Esc>"]
+        }, {
+            "before": ["<Leader>", "o"],
+            "after": ["o", "<Esc>"]
+        },
+        {
+            "before": [",", "d"],
+            "after": ["j", "0", "d", "w", "i", "<BS>", "<ESC>"]
+        }, {
+            "before": ["<C-c>"],
+            "after": ["<Esc>"]
+        }, {
+            "before": ["<C-t>"],
+            "after": [],
+            "commands": [
+              {
+                "command": "workbench.action.quickOpen",
+                "args": []
+              }
+            ] 
+        } ,{
+            "before": ["<Leader>", "q"],
+            "after": [],
+            "commands": [
+              {
+                "command": "workbench.action.toggleSidebarVisibility",
+                "args": []
+              }
+            ] 
+        }, {
+            "before": ["<Leader>", "f"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.findInFiles"
+                }
+            ],
+        }, 
+        {
+            "before": ["s"],
+            "after": ["leader", "leader", "s"]
+        }, {
+            "before": [""]
+        } 
+    ],
+    "vim.sneak": true,
+    "editor.minimap.enabled": false,
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "macros": {
+        "saveAndExitVimInsertMode": [
+            "workbench.action.files.save",
+            "extension.vim_escape"
+        ]
+    },
+    "vim.easymotion": true,
+    "tabnine.experimentalAutoImports": true
+}

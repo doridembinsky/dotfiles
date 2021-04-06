@@ -1,0 +1,25 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "cmd+s",
+        "command": "macros.saveAndExitVimInsertMode"
+    }, {
+        "key": "alt+j",
+        "command": "workbench.action.terminal.focus"
+    }, {
+        "key": "alt+k",
+        "command": "workbench.action.focusActiveEditorGroup"
+    }, {
+        "key": "alt+1",
+        "command": "workbench.action.terminal.focusAtIndex1"
+    },{
+        "key": "alt+2",
+        "command": "workbench.action.terminal.focusAtIndex2"
+    },{
+        "key": "alt+h",
+        "command": "workbench.action.terminal.focusAtIndex1"
+    }, {
+        "key": "alt+l",
+        "command": "workbench.action.terminal.focusAtIndex2"
+    }
+]
